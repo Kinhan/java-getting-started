@@ -16,6 +16,7 @@
 
 package com.example;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
@@ -34,6 +35,15 @@ public class Main {
   @ResponseBody
   String home() {
     return "Hello " + System.getenv().get("MY_NAME") + "!";
+  }
+
+  @Value("${my.env}")
+  private String envStr;
+
+  @RequestMapping("/env")
+  @ResponseBody
+  String env() {
+    return "the env is " + envStr + "!";
   }
 
 }

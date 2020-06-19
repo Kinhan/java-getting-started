@@ -2,6 +2,10 @@
   "name": "Start on Heroku: Java",
   "description": "A barebones Java app, which can easily be deployed to Heroku.",
   "env": {
+    "PROFILE_ACTIVE": {
+      "description": "环境",
+      "value": "dev"
+    },
     "MY_NAME": {
       "description": "名字",
       "value": ""
